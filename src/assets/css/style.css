@@ -1,0 +1,46 @@
+.verticaltext_content a{
+    color:#A6A6A6 !important;
+}
+.ex, .zer{
+    color:#FF7A00;
+}
+.home a{
+    color: #181C28;
+}
+.home a:hover{
+    color: #181C28;
+}
+.art{
+    color: grey;
+}
+.shop{
+    background-color: #FF7A00 !important;
+    color: #FFFFFF !important;
+}
+.allow, .serene, .blue{
+    color: #7B7B7B;
+}
+.sleep, .price p, .hyde{
+    color: #181C28;
+}
+.product{
+    background-color: #F7F7F7;
+}
+.buy, .order{
+    color: #FF7A00 !important; 
+}
+.buy:hover{
+    color: #FF7A00 !important;
+}
+.find, .see{
+    color: #929292;
+}
+.price{
+    background-color: #F2F2F2;
+}
+.tion{
+    color: #FFE607;
+}
+.number p{
+    color: #282828;
+}
