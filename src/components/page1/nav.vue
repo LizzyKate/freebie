@@ -72,8 +72,12 @@
         <relax></relax>
         <product></product>
         <blanket></blanket>
+        <best></best>
+        <pauli></pauli>
       </div>
     </div>
+    <fill></fill>
+    <foot></foot>
   </div>
 </template>
 
@@ -83,14 +87,22 @@ import luxary from "./luxary";
 import relax from "./relax";
 import product from "./product";
 import blanket from "./blanket";
+import best from "./best";
+import pauli from "./pauli";
+import form from "./form";
+import footer from "./footer";
 
 export default {
   components: {
-    banner: banner,
-    lux: luxary,
-    relax: relax,
-    product: product,
-    blanket: blanket
+    'banner': banner,
+    'lux': luxary,
+    'relax': relax,
+    'product': product,
+    'blanket': blanket,
+    'best': best,
+    'pauli':pauli,
+    'fill':form,
+    'foot':footer
   },
   data() {
     return {};

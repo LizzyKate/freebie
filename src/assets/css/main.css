@@ -143,6 +143,9 @@
     font-size: 12px;
     font-family: 'Poppins';
 }
+.price:focus{
+    outline: none !important;
+}
 .price p{
     font-size: 12px;
     font-family: 'Poppins';
@@ -154,7 +157,7 @@
 .hyde{
     font-weight: bolder !important;
     font-family:'Playfair Display' ;
-    font-size: 18px !important;
+    font-size: 20px !important;
 }
 .number p{
     font-size: 10px;
@@ -174,14 +177,82 @@
     width: 40px;
     height: 1px;
 }
+.strike{
+    border: 1px solid #E6E6E6;
+    width: 92% !important;
+    height: 1px;
+}
+.feat{
+    border: 1px solid #E6E6E6;
+    width: 471px;
+}
+.jona > div > div, .jona .art{
+    color: orange !important;
+    margin-left: 20px !important;
+}
 
-
-
-
-
-
-/* @media screen and (min-width:800px){
-    .banner{
-        height: 0 !important;
-    }
-} */
+.jona {
+    border-left: 2px solid orange !important;
+}
+.red{
+    font-size: 15px;
+    font-family: 'Poppins';
+    font-weight: bolder;
+    cursor: pointer;
+}
+.under{
+    width: 70%;
+    height: 1px;
+    border: 1px solid #E6E6E6;
+    margin-left: 4.0rem !important;
+}
+.cuddle{
+    width: 90%;
+}
+.cuddle img{
+    width: 100%;
+}
+.remove{
+    width: 90%;
+}
+.person{
+    width: 471px;
+}
+.person img{
+    width: 100%;
+}
+.client{
+    width: 90%;
+}
+.what{
+    font-size: 3.5rem;
+    font-family: 'Playfair Display';
+}
+.try{
+    font-size: 16px;
+    font-family: 'Poppins';
+}
+.pauli{
+    font-size: 27px;
+    font-family: 'Poppins';
+    font-weight: bolder;
+}
+.transparent{
+   font-family: 'Poppins';
+   border: 1px solid #444956 !important ;
+}
+.transparent:focus{
+    outline: none !important;
+    box-shadow: none !important;
+    border: 1px solid #444956;
+}
+.click{
+    padding: 0.7rem 0 !important;
+}
+.click:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+.return{
+    font-family: 'Poppins';
+}

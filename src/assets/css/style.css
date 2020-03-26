@@ -41,6 +41,26 @@
 .tion{
     color: #FFE607;
 }
-.number p{
+.number p, .red, .what, .pauli, .return{
     color: #282828;
+}
+.feat{
+    background-color: #F7F7F7;
+}
+.try{
+    color: #7b7b7bd1;
+}
+.design{
+    background-color: #181C28;
+}
+.sign{
+    color: #E5E5E5 !important;
+}
+.transparent{
+    background-color: transparent !important;
+    color: #c7c7c757 !important;
+}
+.click{
+    background-color: #FF7A00 !important;
+    color: #FFFFFF !important;
 }
