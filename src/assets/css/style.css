@@ -5,10 +5,10 @@
     color:#FF7A00;
 }
 .home a{
-    color: #181C28;
+    color: #181C28 !important;
 }
 .home a:hover{
-    color: #181C28;
+    color: #181C28 !important;
 }
 .art{
     color: grey;
@@ -20,7 +20,7 @@
 .allow, .serene, .blue{
     color: #7B7B7B;
 }
-.sleep, .price p, .hyde{
+.sleep, .price p, .hyde, .all{
     color: #181C28;
 }
 .product{
@@ -60,7 +60,10 @@
     background-color: transparent !important;
     color: #c7c7c757 !important;
 }
-.click{
+.click, .butt{
     background-color: #FF7A00 !important;
     color: #FFFFFF !important;
+}
+.produce{
+    color: #BFBFBF;
 }

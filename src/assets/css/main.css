@@ -188,7 +188,7 @@
 }
 .jona > div > div, .jona .art{
     color: orange !important;
-    margin-left: 20px !important;
+    /* margin-left: 20px !important; */
 }
 
 .jona {
@@ -255,4 +255,29 @@
 }
 .return{
     font-family: 'Poppins';
+}
+.create{
+    border-bottom: 1px solid red;
+}
+.navLine{
+    border: 1px solid #00000029;
+}
+.all{
+    font-family: 'Playfair Display';
+}
+.produce{
+    font-size: 17px;
+    font-family:'Poppins' ;
+}
+.secondItem{
+    width: 90% !important;
+}
+.butt{
+    font-family:'Poppins' !important;
+    font-size: 12px !important;
+    padding: 13px 35px !important;
+}
+.butt:focus{
+    outline: none !important;
+    box-shadow: none !important;
 }

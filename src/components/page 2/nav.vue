@@ -1,25 +1,6 @@
 <template>
-  <div class="w-100 m-0 p-0">
-    <div class="d-flex flex-row bd-highlight">
-      <div class="p-2 bd-highlight side">
-        <div class="verticaltext">
-          <div class="verticaltext_content">
-            <div class="d-flex bd-highlight">
-              <div class="p-2 bd-highlight">
-                <a href="#">Facebook</a>
-              </div>
-              <div class="p-2 bd-highlight">
-                <a href="#">Twitter</a>
-              </div>
-              <div class="p-2 bd-highlight">
-                <a href="#">Instagram</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="bd-highlight w-100">
-        <nav class="navbar pt-3 navbar-expand-lg navbar-light">
+<div class="">
+    <nav class="navbar pt-3 navbar-expand-lg navbar-light">
           <a class="navbar-brand" href="#">
             <h2 class="ex">Ex-</h2>
             <p class="zer">BAZER SHOP</p>
@@ -55,44 +36,17 @@
             </div>
           </div>
         </nav>
-        <banner></banner>
-        <lux></lux>
-        <relax></relax>
-        <product></product>
-        <blanket></blanket>
-        <best></best>
-        <pauli></pauli>
-      </div>
-    </div>
-    <!-- <fill></fill>
-    <foot></foot> -->
-  </div>
+        <div class="navLine w-100"></div>
+</div>
 </template>
 
 <script>
-import banner from "./banner";
-import luxary from "./luxary";
-import relax from "./relax";
-import product from "./product";
-import blanket from "./blanket";
-import best from "./best";
-import pauli from "./pauli";
-// import form from "./form";
-// import footer from "./footer";
+
+
 
 export default {
-  components: {
-    'banner': banner,
-    'lux': luxary,
-    'relax': relax,
-    'product': product,
-    'blanket': blanket,
-    'best': best,
-    'pauli':pauli
-    // 'fill':form,
-    // 'foot':footer
-  },
-  data() {
+ 
+  data () {
     return {
       choose: 'Ho',
       item:[
@@ -102,16 +56,16 @@ export default {
         {code:'Bl', list:'Blog'},
         {code:'contact', list:'Contact Us'}
       ]
-    };
+    }
   },
   methods: {
     changeMe(word){
       this.choose = word;
     }
-  }
-};
+  },
+}
 </script>
 
-<style >
+<style>
 
 </style>
