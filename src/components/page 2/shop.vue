@@ -1,37 +1,30 @@
 <template>
-<div>
-<side></side>
-<appHead></appHead>
-<blanket></blanket>
-<best></best>
-<fill></fill>
-</div>
+  <div>
+    <appHead></appHead>
+    <blanket></blanket>
+    <best></best>
+    <!-- <fill></fill> -->
+  </div>
 </template>
 
 <script>
-
-import nav from './nav';
-import head from './head';
-import blanket from './blanket';
-import best from './best';
-import form from './form';
+import head from "./head";
+import blanket from "./blanket";
+import best from "./best";
+// import form from "./form";
+// i reused this form component in the footer
 
 export default {
-  components:{
-    'side':nav,
-    'appHead':head,
-    'blanket':blanket,
-    'best': best,
-    'fill': form
+  components: {
+    appHead: head,
+    blanket: blanket,
+    best: best,
   },
-  data () {
-    return {
-      
-    }
+  data() {
+    return {};
   }
-}
+};
 </script>
 
 <style>
-
 </style>

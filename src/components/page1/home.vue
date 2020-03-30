@@ -1,15 +1,33 @@
 <template>
-  <div>
-    <side></side>
+  <div class="bd-highlight w-100">
+    <banner></banner>
+    <lux></lux>
+    <relax></relax>
+    <product></product>
+    <blanket></blanket>
+    <best></best>
+    <pauli></pauli>
   </div>
 </template>
 
 <script>
-import nav from "./nav.vue";
+import banner from "./banner";
+import luxary from "./luxary";
+import relax from "./relax";
+import product from "./product";
+import blanket from "./blanket";
+import best from "./best";
+import pauli from "./pauli";
 
 export default {
   components: {
-    side: nav
+    banner: banner,
+    lux: luxary,
+    relax: relax,
+    product: product,
+    blanket: blanket,
+    best: best,
+    pauli: pauli
   },
   data() {
     return {};
