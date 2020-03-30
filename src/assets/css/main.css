@@ -2,7 +2,7 @@
     margin: 0;
     box-sizing: border-box;
 }
-.side{
+/* .side{
     width: 100px;
     height: 100vh;
 }
@@ -29,7 +29,7 @@
 }
 .verticaltext_content a{
     text-decoration: none !important;
-}
+} */
 .ex{
     font-family:'Playfair Display', serif ;
     font-weight: bolder;
@@ -45,7 +45,7 @@
 }
 .cat{
     margin-left: 30px;
-    margin-right: 100px;
+
 }
 .banner{
     background-image: url(../img/BANNER.png);
@@ -280,4 +280,15 @@
 .butt:focus{
     outline: none !important;
     box-shadow: none !important;
+}
+.tactic, .right{
+    font-size: 12px !important;
+    font-family: 'Poppins';
+    font-weight: lighter;
+}
+.card{
+    transform: scale(2.5,2);
+}
+.right{
+    text-align: end;
 }

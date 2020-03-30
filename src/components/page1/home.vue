@@ -6,6 +6,7 @@
     <product></product>
     <blanket></blanket>
     <best></best>
+    <strike></strike>
     <pauli></pauli>
   </div>
 </template>
@@ -17,6 +18,7 @@ import relax from "./relax";
 import product from "./product";
 import blanket from "./blanket";
 import best from "./best";
+import border from "./border";
 import pauli from "./pauli";
 
 export default {
@@ -27,6 +29,7 @@ export default {
     product: product,
     blanket: blanket,
     best: best,
+    strike: border,
     pauli: pauli
   },
   data() {

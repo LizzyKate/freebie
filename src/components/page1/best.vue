@@ -56,7 +56,6 @@
         </div>
       </div>
     </div>
-    <div class="strike my-5"></div>
   </div>
 </template>
 

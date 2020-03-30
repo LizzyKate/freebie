@@ -11,10 +11,26 @@
         <!-- <div v-for="(val, i) in list" :key="i">{{key.toUpperCase()}}</div> -->
         <!-- then here you will lope through the values of each list -->
         <div class="d-flex flex-column bd-highlight mb-3">
-          <div class="p-2 bd-highlight" v-for="(val, i) in list.values" :key="i">{{val}}</div>
+          <div class="p-2 bd-highlight tactic" v-for="(val, i) in list.values" :key="i">{{val}}</div>
+        </div>
+      </div>
+      <div class="col-sm return">
+        PAYMENT ACCEPT
+        <div class="d-flex flex-row bd-highlight mb-3">
+  <div class="p-2 bd-highlight mr-3">
+    <a href="#">
+      <i class="fab fa-cc-mastercard card"></i>
+    </a>
+  </div>
+  <div class="p-2 bd-highlight">
+    <a href="#">
+      <i class="fab fa-cc-visa card"></i>
+    </a>
+  </div>
         </div>
       </div>
     </div>
+    <footer class="mt-3 right">Copyright @ 2017 l All Right Reserved</footer>
   </div>
 </section>
 
@@ -30,20 +46,38 @@ export default {
     return {
       item: [
         // plus ypu data structure is trash
-        { name: 'Company' , values: ["Home", "About Us", "Shop", "Blog", "Contact Us"] },
-        {
-          name: 'Service', values: ["Support", "Faq", "Warranty", "Live Chat", "Privacy Policy"]
+        { name: 'Company' , 
+        values: [
+          "Home", 
+          "About Us", 
+          "Shop", 
+          "Blog", 
+          "Contact Us"
+          ] 
         },
         {
-          name: "Orders & Returns", values: [
+          name: 'Service', 
+          values: [
+            "Support", 
+            "Faq", 
+            "Warranty", 
+            "Live Chat", 
+            "Privacy Policy"
+            ]
+        },
+        {
+          name: "Orders & Returns", 
+          values: [
             "Order",
             "Status",
             "Shipping",
             "Policy & Services",
             "Cart"
           ]
-        },
-        { name: "Payment Accept", values : [] }
+        }
+        // { name: "Payment Accept", 
+        // values : [] 
+        // }
       ]
     };
   }
