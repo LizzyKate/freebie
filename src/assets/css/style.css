@@ -67,6 +67,9 @@
 .produce{
     color: #BFBFBF;
 }
-.tactic, .card, .right{
+.tactic, .card, .right, .long{
     color: #7B7B7B;
+}
+.lorium{
+    color: #BFBFBF;
 }

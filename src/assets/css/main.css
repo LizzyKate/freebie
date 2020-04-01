@@ -292,3 +292,18 @@
 .right{
     text-align: end;
 }
+.lorium{
+    font-family: 'Poppins';
+    font-weight: lighter;
+}
+.bottom{
+    margin-bottom: 10rem;
+}
+.long{
+    font-family: 'Poppins';
+    font-weight: lighter;
+    font-size: 10px;
+}
+.stand img{
+    width: 75%;
+}
