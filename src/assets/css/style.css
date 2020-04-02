@@ -1,6 +1,6 @@
-.verticaltext_content a{
+/* .verticaltext_content a{
     color:#A6A6A6 !important;
-}
+} */
 .ex, .zer{
     color:#FF7A00;
 }
@@ -13,14 +13,14 @@
 .art{
     color: grey;
 }
-.shop{
+.shop, .click, .butt{
     background-color: #FF7A00 !important;
     color: #FFFFFF !important;
 }
 .allow, .serene, .blue{
     color: #7B7B7B;
 }
-.sleep, .price p, .hyde, .all{
+.sleep, .price p, .hyde, .all, .late, .to h4{
     color: #181C28;
 }
 .product{
@@ -60,16 +60,15 @@
     background-color: transparent !important;
     color: #c7c7c757 !important;
 }
-.click, .butt{
-    background-color: #FF7A00 !important;
-    color: #FFFFFF !important;
-}
 .produce{
     color: #BFBFBF;
 }
-.tactic, .card, .right, .long{
+.tactic, .card, .right, .long, .to p{
     color: #7B7B7B;
 }
 .lorium{
     color: #BFBFBF;
+}
+.ipsum p, .ipsum h2{
+    color: #FFFFFF;
 }
