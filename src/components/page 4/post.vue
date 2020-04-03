@@ -17,7 +17,8 @@ export default {
       choose:'popular',
       item:[
           {short_name:'popular', long_name:'Popular Post'},
-          {short_name:'latest', long_name:'Latest Post'}
+          {short_name:'latest', long_name:'Latest Post'},
+          {short_name: 'add', long_name:'Add A Post'}
       ]
     }
   },
