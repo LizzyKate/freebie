@@ -5,6 +5,7 @@
    <pauli></pauli>
    <preview></preview>
    <note></note>
+   <comment></comment>
 </div>
 </template>
 
@@ -15,6 +16,7 @@ import advice from './advice';
 import pauli from './pauli';
 import preview from './preview';
 import note from './note';
+import comment from './comment';
 
 export default {
     components:{
@@ -22,7 +24,8 @@ export default {
         advice:advice,
         pauli:pauli,
         preview:preview,
-        note:note
+        note:note,
+        comment:comment
     },
     data () {
     return {

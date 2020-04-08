@@ -17,11 +17,11 @@
     background-color: #FF7A00 !important;
     color: #FFFFFF !important;
 }
-.allow, .serene, .blue, .three p, .four p{
+.allow, .serene, .blue, .three p, .four p, .enjoy, .describe p, .entire, .tire{
     color: #7B7B7B;
 }
-.sleep, .price p, .hyde, .all, .late, .to h4, .jerin, .three h3{
-    color: #181C28;
+.sleep, .price p, .hyde, .all, .late, .to h4, .jerin, .three h3, .max h2, .strong, .describe h6{
+    color: #181C28 !important;
 }
 .product{
     background-color: #F7F7F7;
@@ -41,7 +41,7 @@
 .tion{
     color: #FFE607;
 }
-.number p, .red, .what, .pauli, .return{
+.number p, .red, .what, .pauli, .return, .jarvis{
     color: #282828;
 }
 .feat{
@@ -63,7 +63,7 @@
 .produce{
     color: #BFBFBF;
 }
-.tactic, .card, .right, .long, .to p{
+.tactic, .card, .right, .long, .to p, .max p, .london{
     color: #7B7B7B;
 }
 .lorium{
@@ -71,4 +71,11 @@
 }
 .ipsum p, .ipsum h2{
     color: #FFFFFF;
+}
+.pic{
+    background-color: #CBCBCB;
+}
+.min, .rayan, .rayan:focus{
+    color: #A8A8A8 !important;
+    border-color: none !important;
 }

@@ -364,7 +364,7 @@
 .three h3{
     font-family: 'Playfair Display';
 }
-.three p, .four p{
+.three p, .four p, .enjoy, .describe p, .entire{
     font-size: 12px;
     font-family:'Poppins' ;
     font-weight: lighter;
@@ -382,4 +382,67 @@
 }
 .four{
     width: 90% !important;
+}
+.down{
+    margin-top: 5px;
+}
+.strikeUp{
+    border: 1px solid #E6E6E6;
+    width: 90% !important;
+    height: 1px;
+    margin-left: 3rem !important;
+}
+.pic{
+    height: 50px;
+    width: 50px;
+}
+.jarvis{
+    font-family: 'Poppins';
+    font-size: 10px;
+    font-weight: bold;
+}
+.min{
+    font-family: 'Poppins';
+    font-size: 10px;
+}
+.strikeDown{
+    border: 1px solid #E6E6E6;
+    height: 1px;   
+}
+.rayan{
+    font-size: 10px !important;
+    font-family: 'Poppins' !important;
+    font-weight: lighter !important;
+}
+.rayan:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+.imahe img{
+    width: 80%;
+}
+.tiger{
+    width:80px;
+    height: 60px;
+    border:1px solid #95989A;
+    border-radius: 5px;
+}
+.tiger2{
+    width: 80% !important;
+}
+.tiger img{
+    width: 100%;
+}
+.max h2{
+    font-family:'Playfair Display' ;
+}
+.max p{
+    font-family: 'Poppins';
+}
+.london{
+    font-family: 'Poppins';
+    font-size: 14px !important;
+}
+.describe h6{
+    font-family:'Poppins'
 }
