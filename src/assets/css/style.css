@@ -4,12 +4,6 @@
 .ex, .zer{
     color:#FF7A00;
 }
-.home a{
-    color: #181C28 !important;
-}
-.home a:hover{
-    color: #181C28 !important;
-}
 .art{
     color: grey;
 }
@@ -20,7 +14,7 @@
 .allow, .serene, .blue, .three p, .four p, .enjoy, .describe p, .entire, .tire{
     color: #7B7B7B;
 }
-.sleep, .price p, .hyde, .all, .late, .to h4, .jerin, .three h3, .max h2, .strong, .describe h6{
+.sleep, .price p, .hyde, .all, .late, .to h4, .jerin, .three h3, .max h2, .strong, .describe h6, .home a, .home a:hover, .off, .offME{
     color: #181C28 !important;
 }
 .product{
@@ -29,8 +23,9 @@
 .buy, .order{
     color: #FF7A00 !important; 
 }
-.buy:hover{
+.buy:hover, .off:hover, .offMe:hover{
     color: #FF7A00 !important;
+    cursor: pointer; 
 }
 .find, .see{
     color: #929292;
@@ -41,7 +36,7 @@
 .tion{
     color: #FFE607;
 }
-.number p, .red, .what, .pauli, .return, .jarvis{
+.number p, .red, .what, .pauli, .return, .jarvis, .doosti{
     color: #282828;
 }
 .feat{
@@ -63,7 +58,7 @@
 .produce{
     color: #BFBFBF;
 }
-.tactic, .card, .right, .long, .to p, .max p, .london{
+.tactic, .card, .right, .long, .to p, .max p, .london, .salah{
     color: #7B7B7B;
 }
 .lorium{

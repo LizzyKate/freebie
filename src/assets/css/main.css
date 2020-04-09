@@ -446,3 +446,41 @@
 .describe h6{
     font-family:'Poppins'
 }
+.off{
+    width: 100px;
+    height: 40px;
+    border: 1px solid #95989ab8 !important;
+    font-size: 13px !important;
+    font-weight: 'Poppins';
+}
+.offMe{
+    width: 140px;
+    height: 40px;
+    border: 1px solid #95989ab8 !important;
+    font-size: 13px !important;
+    font-weight: 'Poppins';
+}
+.longer{
+    border: 1px solid #95989a73!important;
+    width: 100px;
+    height: 1px;
+}
+.increase{
+    width: 80% !important;
+}
+.pill{
+    width: 90px;
+    height: 25px;
+    border:1px solid #D6D6D6;
+    margin-left: 10rem !important;
+    font-family: 'Poppins';
+    font-size: 10px;
+}
+.salah{
+    font-size: 10px;
+    font-family: 'Poppins';
+}
+.doosti{
+    font-weight: bolder;
+    font-family: 'Playfair Display';
+}
