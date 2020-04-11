@@ -40,7 +40,6 @@
       </div>
     </div>
   </div>
-  <div class="strike mb-5 "></div>
 </div>
 </template>
 

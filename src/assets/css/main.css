@@ -476,6 +476,9 @@
     font-family: 'Poppins';
     font-size: 10px;
 }
+.message{
+    width: 85%;
+}
 .salah{
     font-size: 10px;
     font-family: 'Poppins';
@@ -483,4 +486,10 @@
 .doosti{
     font-weight: bolder;
     font-family: 'Playfair Display';
+}
+.relate{
+    width: 85% !important;
+}
+.import{
+    width: 92% !important;
 }

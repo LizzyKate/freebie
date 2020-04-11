@@ -1,7 +1,7 @@
 <template>
 <div>
-<div class="container mt-5">
-  <div class="row">
+<div class="container-fluid mt-5 mx-auto">
+  <div class="row message mx-auto">
     <div class="col" v-for="(write, i) in comment " :key="i">
         <div class="d-flex flex-column bd-highlight">
   <div class="salah bd-highlight">{{write.doosti}}</div>

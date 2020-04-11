@@ -5,6 +5,7 @@
     <relax></relax>
     <product></product>
     <blanket></blanket>
+    <remove></remove>
     <best></best>
     <strike></strike>
     <pauli></pauli>
@@ -17,6 +18,7 @@ import luxary from "./luxary";
 import relax from "./relax";
 import product from "./product";
 import blanket from "./blanket";
+import remove from "./strike";
 import best from "./best";
 import border from "./border";
 import pauli from "./pauli";
@@ -28,6 +30,7 @@ export default {
     relax: relax,
     product: product,
     blanket: blanket,
+    remove:remove,
     best: best,
     strike: border,
     pauli: pauli
