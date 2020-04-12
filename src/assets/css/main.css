@@ -493,3 +493,20 @@
 .import{
     width: 92% !important;
 }
+.tog:focus{
+    outline: none !important;
+    border: none !important;
+}
+@media screen and (max-width: 1000px){
+    .create{
+        width: 5% !important;
+    }
+    .soft{
+        margin-left: 3rem !important;
+    }
+    .adjust{
+        margin-left: 3rem !important;
+        margin-top:3rem !important;
+        margin-bottom: 3rem !important;
+    }
+} 

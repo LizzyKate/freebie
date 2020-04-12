@@ -1,12 +1,12 @@
 <template>
   <div class>
     <nav class="navbar pt-3 navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand soft" href="#">
         <h2 class="ex">Ex-</h2>
         <p class="zer">BAZER SHOP</p>
       </a>
       <button
-        class="navbar-toggler"
+        class="navbar-toggler tog"
         type="button"
         data-toggle="collapse"
         data-target="#navbarSupportedContent"
@@ -32,7 +32,7 @@
             >{{link.list}}</router-link>
           </li>
         </ul>
-        <div>
+        <div class="adjust">
           <span class="art">
             <i class="fas fa-search"></i>
           </span>
