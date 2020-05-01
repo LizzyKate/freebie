@@ -4,11 +4,12 @@
     <div class="col">
       <div class="d-flex flex-column bd-highlight ">
   <div class=" bd-highlight imahe">
-      <img src="../../assets/img/imahe.png">
+      <img src="../../assets/img/imahe.png" v-if="!currentProduct.image">
+      <img v-if="currentProduct.image" v-bind:src="require('../../assets/img/' + currentProduct.image)"/>
   </div>
   <div class="bd-highlight mt-5">
       <div class="d-flex flex-row bd-highlight justify-content-between tiger2">
-  <div class="bd-highlight tiger " v-for="(product, i) in items" :key="i">
+  <div class="bd-highlight tiger " v-for="(product, i) in itemsOne" :key="i">
       <img v-bind:src="require('../../assets/img/' + product)"/>
   </div>
   
@@ -19,9 +20,12 @@
     <div class="col">
       <div class="d-flex flex-column bd-highlight ">
   <div class=" bd-highlight max">
-      <h2>Max Product Name</h2>
-      <p>BLUE & WHITE</p>
-      <h2>$140</h2>
+      <h2 v-if="!currentProduct.name">Max Product Name</h2>
+      <h2 v-if="currentProduct.name">{{currentProduct.name}}</h2>
+      <p v-if="!currentProduct.color">BLUE & WHITE</p>
+      <p v-if="currentProduct.color">{{currentProduct.color.toUpperCase()}}</p>
+      <h2 v-if="!currentProduct.price">$140</h2>
+      <h2 v-if="currentProduct.price">{{'$' + currentProduct.price}}</h2>
       <div class=" mt-5">
         <button type="button" class="btn btn-lg butt">ADD TO CART</button>
     </div>
@@ -55,11 +59,105 @@ export default {
    
     data () {
     return {
-      items:['blanket_product_04_large@2x.png', '2016-10-16_2048_large.png', 'blanket_product_04_large@2x.png', '2016-10-16_2048_large.png'],
-      note:['A wonderful serenity has taken possession of my entire like these sweet mornings.', 'A wonderful serenity has taken possession of my entire like these sweet mornings.']
+      itemsOne:['blanket_product_04_large@2x.png', '2016-10-16_2048_large.png', 'blanket_product_04_large@2x.png', '2016-10-16_2048_large.png'],
+
+      note:['A wonderful serenity has taken possession of my entire like these sweet mornings.', 'A wonderful serenity has taken possession of my entire like these sweet mornings.'],
+
+      items :[
+        {
+          name:'Hyde Product Name',
+          id:1,
+          price:'140.99',
+          color:'blue and white',
+          order:'Order Now',
+          image:'blanket_product_04_large@2x.png'
+        },
+        {
+           name:'Hyde Product Name',
+           id:2,
+          price:'140.99',
+          color:'blue and white',
+          order:'Order Now',
+          image:'2016-10-16_2048_large.png'
+        },
+        {
+           name:'Hyde Product Name',
+           id:3,
+          price:'140.99',
+          color:'blue and white',
+          order:'Order Now',
+          image:'blanket_product_03_large@2x.png'
+        },
+        {
+          name:'Hyde Product Name',
+          id:4,
+          price:'140.99',
+          color:'blue and white',
+          order:'Order Now',
+          image:'blanket_product_04_large@2x.png'
+        },
+        {
+           name:'Hyde Product Name',
+           id:5,
+          price:'140.99',
+          color:'blue and white',
+          order:'Order Now',
+          image:'2016-10-16_2048_large.png'
+        },
+        {
+           name:'Hyde Product Name',
+           id:6,
+          price:'140.99',
+          color:'blue and white',
+          order:'Order Now',
+          image:'blanket_product_03_large@2x.png'
+        },
+           {
+          name:'Hyde Product Name',
+          id:7,
+          price:'140.99',
+          color:'blue and white',
+          order:'Order Now',
+          image:'blanket_product_04_large@2x.png'
+        },
+        {
+           name:'Hyde Product Name',
+           id:8,
+          price:'140.99',
+          color:'blue and white',
+          order:'Order Now',
+          image:'2016-10-16_2048_large.png'
+        },
+        {
+           name:'Hyde Product Name',
+           id:9,
+          price:'140.99',
+          color:'blue and white',
+          order:'Order Now',
+          image:'blanket_product_03_large@2x.png'
+        }
+      ],
+
+      currentProduct:{}
     }
+  },
+
+  mounted() {
+    // const firstIdea = () => {
+    let id = this.$route.params.id; 
+    this.currentProduct = this.items.find(e => {
+      return e.id === +id;
+    });
+    // }
+    // const secondIdea = () => {
+    //   let id = this.$route.params.id;
+    //   this.currentProduct = this.itemThree.find(e => {
+    //     return e.id === +id;
+    //   })
+    // }
+    //  
   }
-}
+  }
 </script>
 
 <style>

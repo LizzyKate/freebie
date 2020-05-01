@@ -27,7 +27,14 @@
       <div class="col p-0 ml-5">
         <div class="d-flex flex-column bd-highlight mb-3">
           <div class="bd-highlight cuddle">
+            <div v-if="pictures">
             <img src="../../assets/img/cuddle.png" />
+            </div>
+            <!-- <div v-if="pictures">
+            <div>
+              <img :src="require('../../assets/img/' + picture)"/>
+            </div>
+            </div> -->
           </div>
           <div class="bd-highlight remove mt-3">
             <div class="d-flex flex-row bd-highlight justify-content-between align-items-center">
@@ -63,6 +70,7 @@
 export default {
   data() {
     return {
+      pictures:['2016-10-16_2048_large.png', 'blanket_product_03_large@2x.png', 'blanket_product_04_large@2x.png', 'bottom_img.png'],
       choose: "New",
       list: [
         { short_name: "Feautured", long_name: "Feautured Product" },
@@ -76,9 +84,16 @@ export default {
     changeMe(word) {
       console.log(word, this.choose);
       this.choose = word;
-      console.log(word, this.choose);
+      // this.pictures = word;
     }
-  }
+  },
+  // watch: {
+  //   changePic(){
+  //     if(this.changeMe()){
+  //       this.pictures = this.choose;
+  //     }
+  //   }
+  // }
 };
 </script>
 

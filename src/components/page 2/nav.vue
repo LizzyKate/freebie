@@ -1,10 +1,10 @@
 <template>
-  <div class>
-    <nav class="navbar pt-3 navbar-expand-lg navbar-light">
-      <a class="navbar-brand soft" href="#">
+  <div class="abs">
+    <nav class="navbar pt-3 navbar-expand-lg navbar-light" >
+      <router-link to="/" class="navbar-brand soft" >
         <h2 class="ex">Ex-</h2>
         <p class="zer">BAZER SHOP</p>
-      </a>
+      </router-link>
       <button
         class="navbar-toggler tog"
         type="button"
@@ -23,21 +23,21 @@
             class="nav-item home"
             v-for="link in item"
             :key="link.id"
-            v-on:click="changeMe(link.code)"
+           
           >
             <router-link :to="`${link.page}`"
               class="nav-link"
               href="#"
-              v-bind:class="{'create': link.code === choose}"
+              active-class="create" exact
             >{{link.list}}</router-link>
           </li>
         </ul>
         <div class="adjust">
-          <span class="art">
+          <span class="art" @click="isModalVisible = !isModalVisible">
             <i class="fas fa-search"></i>
           </span>
           <span class="art cle">
-            <i class="fas fa-question"></i>
+            <router-link to="/questions" class="fas fa-question root"></router-link>
           </span>
           <span class="art cat">
             <i class="fas fa-shopping-cart"></i>
@@ -46,13 +46,23 @@
       </div>
     </nav>
     <div class="navLine w-100"></div>
+    <modal class="pop" v-show="isModalVisible"></modal>
   </div>
 </template>
 
 <script>
+
+import modal from '../additions/modal'
+import questions from '../additions/questions'
+
 export default {
-  data() {7
+  components:{
+    modal:modal,
+    questions:questions
+  },
+  data() {
     return {
+      isModalVisible:false,
       choose: "Ho",
       item: [
         {
@@ -90,6 +100,12 @@ export default {
           id:5,
           page:'/cart',
           list: "Your Product"
+        },
+        {
+          code:'contact',
+          id:6,
+          page:'/contact',
+          list:'Contact Us'
         }
       ]
     };
@@ -97,6 +113,12 @@ export default {
   methods: {
     changeMe(word) {
       this.choose = word;
+    },
+    showModal(){
+      this.isModalVisible = true;
+    },
+     closeModal(){
+      this.isModalVisible= false
     }
   }
 };

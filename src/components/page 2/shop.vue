@@ -22,10 +22,11 @@ export default {
   components: {
     appHead: head,
     blanket: blanket,
-    best: best,
+    best: best
   },
   data() {
-    return {};
+    return {
+    };
   }
 };
 </script>

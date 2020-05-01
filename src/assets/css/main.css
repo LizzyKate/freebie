@@ -137,11 +137,11 @@
     width: 100%;
 }
 .price{
-    width: 100px;
-    height: 30px;
-    border: 1px solid #F2F2F2;
-    font-size: 12px;
-    font-family: 'Poppins';
+    width: 100px !important;
+    height: 30px !important;
+    border: 1px solid #F2F2F2 !important;
+    font-size: 12px !important;
+    font-family: 'Poppins' !important;
 }
 .price:focus{
     outline: none !important;
@@ -171,6 +171,7 @@
 .order{
     font-size: 9px;
     font-family: 'Poppins';
+    cursor: pointer;
 }
 .now{
     border: 2px solid #FF7A00;
@@ -232,7 +233,7 @@
 .try{
     font-size: 16px;
     font-family: 'Poppins';
-}
+}    
 .pauli{
     font-size: 27px;
     font-family: 'Poppins';
@@ -286,8 +287,10 @@
     font-size: 12px !important;
     font-family: 'Poppins';
     font-weight: lighter;
+    cursor:pointer;
+    text-decoration: none !important;
 }
-.card{
+.cardo{
     transform: scale(2.5,2);
 }
 .right{
@@ -314,12 +317,12 @@
     background-size: cover;
     height: 250px;
 }
-.ipsum p{
-    font-family: 'Poppins';
-    font-weight: lighter;
-    font-size: 14px;
+.ipsum p, .tel, .visit{
+    font-family: 'Poppins' !important;
+    font-weight: lighter !important;
+    font-size: 14px !important;
 }
-.ipsum h2, .to h4{
+.ipsum h2, .ipsum h5 .to h4{
     font-family: 'Playfair Display';
 }
 .post{
@@ -361,13 +364,13 @@
     font-family: 'Poppins';
     font-weight: bold;
 }
-.three h3{
+.three h3, .bill, .billo, .billor .billors{
     font-family: 'Playfair Display';
 }
-.three p, .four p, .enjoy, .describe p, .entire{
-    font-size: 12px;
-    font-family:'Poppins' ;
-    font-weight: lighter;
+.three p, .four p, .enjoy, .describe p, .entire, .opt{
+    font-size: 12px !important;
+    font-family:'Poppins' !important;
+    font-weight: lighter !important;
 }
 .shift{
     width: 58% !important;
@@ -497,16 +500,98 @@
     outline: none !important;
     border: none !important;
 }
+.abs{
+    position: relative;
+}
+.pop{
+    position: absolute;
+    width: 50% !important;
+    right: 30px;
+    top:140px;
+}
+.pop input{
+    outline: none !important;
+    box-shadow: none !important;
+    border:1px solid #95989a73!important;
+    border-right: none !important;
+}
+.pop input:focus{
+    outline: none !important;
+    box-shadow: none !important;
+    border:1px solid #95989a73!important;
+}
+.pop div{
+    border-left: none !important;
+}
+.question{
+    height: 130px;
+    background-color: black;
+}
+.purk:focus{
+    outline: none !important;
+    box-shadow: none !important;
+    border:1px solid #95989a73!important;
+}
+.comp{
+    background-image: url("../img/images\ \(7\).png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
+    position: relative;
+}
+.absolute{
+    height: 50vh;
+}
+.call{
+    position: absolute;
+    top: 260px;
+}
+.hear{
+    height: 300px;
+    width: 400px;
+    border: none;
+}
+.visit a{
+    text-decoration: none !important;
+}
+.pal{
+    height: 75px;
+    width: 120px;
+    border: none !important;
+}
+.name{
+    height: 60px;
+    width: 130px;
+    border: none !important;
+}
+.dot{
+    border: 1px dotted #95989a73 !important;
+}
 @media screen and (max-width: 1000px){
     .create{
         width: 5% !important;
     }
     .soft{
         margin-left: 3rem !important;
+        cursor: pointer;
     }
     .adjust{
         margin-left: 3rem !important;
         margin-top:3rem !important;
         margin-bottom: 3rem !important;
     }
+    .absolute{
+        height: 25vh !important;
+    }
+    .hear{
+        height: 350px !important;
+    }
 } 
+@media screen and (max-width: 1200px){
+    .absolute{
+        height: 25vh !important;
+    }
+    .hear{
+        height: 350px !important;
+    }
+}

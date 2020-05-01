@@ -4,8 +4,8 @@
 .ex, .zer{
     color:#FF7A00;
 }
-.art{
-    color: grey;
+.art, .root{
+    color: grey !important;
 }
 .shop, .click, .butt{
     background-color: #FF7A00 !important;
@@ -23,21 +23,21 @@
 .buy, .order{
     color: #FF7A00 !important; 
 }
-.buy:hover, .off:hover, .offMe:hover{
+.buy:hover, .off:hover, .offMe:hover, .buyo:hover{
     color: #FF7A00 !important;
     cursor: pointer; 
 }
-.find, .see{
+.find, .see {
     color: #929292;
 }
 .price{
-    background-color: #F2F2F2;
+    background-color: #F2F2F2 !important;
 }
 .tion{
     color: #FFE607;
 }
-.number p, .red, .what, .pauli, .return, .jarvis, .doosti{
-    color: #282828;
+.number p, .red, .what, .pauli, .return, .jarvis, .doosti, .team p, .team h2, .team h5, .visit, .bill {
+    color: #282828 !important;
 }
 .feat{
     background-color: #F7F7F7;
@@ -58,8 +58,8 @@
 .produce{
     color: #BFBFBF;
 }
-.tactic, .card, .right, .long, .to p, .max p, .london, .salah{
-    color: #7B7B7B;
+.tactic, .cardo, .right, .long, .to p, .max p, .london, .salah, .opt, .billo{
+    color: #7B7B7B !important;
 }
 .lorium{
     color: #BFBFBF;
@@ -73,4 +73,21 @@
 .min, .rayan, .rayan:focus{
     color: #A8A8A8 !important;
     border-color: none !important;
+}
+.absolute, .reflex{
+    background-color: #D2D1D1;
+}
+.hear{
+    background-color: #FFFFFF;
+}
+.tel{
+color: #282828 !important;
+background-color: none !important;
+text-decoration: none !important;
+}
+.pal, .name{
+    background-color:  #7b7b7b1f;
+}
+.billors{
+    cursor: pointer;
 }

@@ -9,9 +9,9 @@
         <input
           class="form-control mr-sm-2 py-4 pr-5 transparent"
           placeholder="mailto@youmail.com"
-          aria-label="Search"
+          aria-label="Search" type="email" required
         />
-        <button class="btn click my-2 my-sm-0 px-5" type="submit">Search</button>
+        <button class="btn click my-2 my-sm-0 px-5" type="submit">Submit</button>
       </form>
     </nav>
   </div>

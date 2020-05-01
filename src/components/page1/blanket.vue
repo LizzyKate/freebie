@@ -9,7 +9,9 @@
               <div class="strip m-auto">
                 <img v-bind:src=" require('../../assets/img/'+product.image) " />
               </div>
+              <router-link :to="`cart/${product.id}`" >
               <button class="rounded text-center price mt-5 ml-3">{{'$'+ product.price}}</button>
+              </router-link>
             </div>
           </div>
           <div class="bd-highlight quest">
@@ -32,7 +34,7 @@
           <div class="bd-highlight blue">{{product.color.toUpperCase()}}</div>
           <div class="bd-highlight mt-3">
             <div class="d-flex flex-row bd-highlight align-items-center">
-              <div class="bd-highlight order">{{product.order.toUpperCase()}}</div>
+              <router-link :to="`cart/${product.id}`" class="bd-highlight order">{{product.order.toUpperCase()}}</router-link>
               <div class="ml-1 bd-highlight now"></div>
             </div>
           </div>
@@ -50,6 +52,7 @@ export default {
       items :[
         {
           name:'Hyde Product Name',
+          id:1,
           price:'140.99',
           color:'blue and white',
           order:'Order Now',
@@ -57,6 +60,7 @@ export default {
         },
         {
            name:'Hyde Product Name',
+           id:2,
           price:'140.99',
           color:'blue and white',
           order:'Order Now',
@@ -64,6 +68,7 @@ export default {
         },
         {
            name:'Hyde Product Name',
+           id:3,
           price:'140.99',
           color:'blue and white',
           order:'Order Now',
