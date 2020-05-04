@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import VueRouter from 'vue-router'
 import Routes from './route';
 // import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+// import 'bootstrap-vue'
 
 Vue.use(VueRouter);
 // Vue.use(BootstrapVue);
@@ -14,7 +15,7 @@ Vue.use(VueRouter);
 
 const router = new VueRouter({
   routes: Routes,
-  mode:'history'
+  mode: 'history'
 });
 
 new Vue({
