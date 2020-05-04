@@ -1,5 +1,5 @@
 
-uselesss page plese try and fix the banner and side nav
+uselesss pageplese try and fix the banner and side nav
 
 
 <template>
