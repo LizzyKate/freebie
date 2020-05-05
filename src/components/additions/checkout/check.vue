@@ -4,12 +4,12 @@
     <h5 class="text-center mt-5 bill">Billing Info</h5>
     <p class="text-center w-25 mx-auto opt">Choose A PayMent Option Below And fill Out the Appropriate Information</p>
     </div>
-    <!-- <div class="d-flex flex-row bd-highlight mb-3 mt-5 justify-content-center align-items-center">
-  <div class="p-2 bd-highlight rounded pal text-center ml-3" v-for="(card, i) in cards" :key="i" @click="pick(card.code)" :class="{'move': card.code === choose}">
+    <div class="d-flex flex-row bd-highlight mb-3 mt-5 justify-content-center align-items-center">
+  <div class="p-2 bd-highlight rounded pal text-center ml-3" v-for="(card, i) in cards" :key="i">
       <i :class="card.syntax"></i>
       <p class="opt mt-3">{{card.name}}</p>
   </div>
-</div> -->
+</div>
 
 </div>
 </template>
@@ -35,19 +35,11 @@ export default {
             }
         ]
     }
-  },
-  methods:{
-      pick(word){
-          this.choose = word
-      }
   }
  
 }
 </script>
 
 <style scoped>
-.move{
-    border: 1px solid #FF7A00 !important;
-}
 
 </style>

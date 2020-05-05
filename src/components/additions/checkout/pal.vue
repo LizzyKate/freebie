@@ -1,95 +1,55 @@
 <template>
 <div class="container w-75 mx-auto p-0 mt-5">
-  <div class="row w-75 mx-auto">
+  <div class="row w-75 mx-auto ">
     <div class="col ">
       <div class="d-flex flex-column bd-highlight ">
   <div class=" bd-highlight">
     <h5 class="bill">Billing Address</h5>
     </div>
   <div class="mt-3 bd-highlight">
-    <form>
+    <form @submit.prevent="submit()">
   <div class="form-group">
     <label for="exampleFormControlInput1" class="billo">Full Name</label>
-    <input type="text" class="form-control opt" required>
+    <input type="text" class="form-control opt" v-model="select" required>
   </div>
   <div class="form-group">
     <label for="exampleFormControlInput1" class="billo">Address 1</label>
-    <input type="text" class="form-control opt" required>
+    <input type="text" class="form-control opt" v-model="select1" required>
   </div>
   <div class="form-group">
     <label for="exampleFormControlInput1" class="billo">Address 2</label>
-    <input type="text" class="form-control opt" required>
+    <input type="text" class="form-control opt" v-model="select2" required>
   </div>
   <div class="form-group">
     <label for="exampleFormControlInput1" class="billo">City</label>
-    <input type="text" class="form-control opt" required>
+    <input type="text" class="form-control opt" v-model="select3" required>
   </div>
   <div class="form-row">
     <div class="col">
       <label class="billo" >State</label>
-  <select class="custom-select my-1 mr-sm-2 opt" id="inlineFormCustomSelectPref" >
+  <select class="custom-select my-1 mr-sm-2 opt" id="inlineFormCustomSelectPref" v-model="select4" >
     <option selected>Select State</option>
     <option v-for="(select, i) in options" :key="i" :value="select.value">{{select.state}}</option>
   </select>
     </div>
      <div class="col">
       <label class="billo">Zip Code</label>
-      <input type="text" class="form-control mt-1 opt"  required>
+      <input type="number" class="form-control mt-1 opt" v-model="select5" required>
     </div>
+  </div>
+  <div class="d-flex flex-row bd-highlight justify-content-center">
+  <div class="p-2 bd-highlight text-center mt-5">
+    <button class="btn btn-lg butt" @click="cancel()">Cancel</button>
+  </div>
+  <div class="p-2 bd-highlight text-center mt-5">
+    <button class="btn btn-lg butt turn" type="submit" :disabled="check">Submit</button>
+  </div>
   </div>
     </form>
   </div>
 </div>
     </div>
-    <div class="col">
-      <div class="d-flex flex-column bd-highlight ">
-  <div class=" bd-highlight">
-    <h5 class="bill">PayPal Info</h5>
-    <p class="opt">Your Financial Details Won't Be Shared With The Merchant</p>
-    </div>
-  <div class="mt-3 bd-highlight">
-    <form>
-  <div class="form-group">
-    <label for="exampleFormControlInput1" class="billo">Name On Card</label>
-    <input type="text" class="form-control opt"  required>
   </div>
-  <div class="form-group">
-    <label for="exampleFormControlInput1" class="billo">Card Number</label>
-    <input type="number" class="form-control opt"  placeholder="0000-0000-0000-0000" required>
-  </div>
-  <div class="form-row">
-    <div class="col-md-4 mb-3">
-      <label class="billo">Csc Number</label>
-      <input type="number" class="form-control opt"  placeholder='CSC' required>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label class="billo">Expiry Month</label>
-   <select class="custom-select my-1 mr-sm-2 opt" id="inlineFormCustomSelectPref" >
-    <option selected>Month</option>
-    <option v-for="(pick, i) in months" :key="i" :value="pick.value">{{pick.month}}</option>
-  </select>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label class="billo">Expiry Year</label>
-         <input type="number" class="form-control opt"  placeholder='cvv' required>
-    </div>
-  </div>
-  <div class="form-group">
-  <label class="billo">Contact Information</label>
-  <input type="tel" class="form-control opt"  placeholder="+000-123-456-7890" required>
-  </div>
-  <div class="form-group">
-  <label class="billo">Email Address</label>
-  <input type="email" class="form-control opt"  placeholder="mail@youmail.com" required>
-  </div>
-    </form>
-  </div>
-      </div>
-    </div>
-  </div>
-  <div class="text-center mt-5">
-      <button type="submit" class="btn btn-lg butt">Submit</button>
-    </div>
 </div>
 </template>
 
@@ -325,8 +285,46 @@ export default {
            value:6,
            year:2025
          }
-       ]
+       ],
+       select:'',
+       select1:'',
+       select2:'',
+       select3:'',
+       select4:'',
+       select5:''
     }
+},
+methods:{
+  submit(){
+    if(this.select !== '' && this.select1 !== '' && this.select2 !== '' && this.select3 !== '' && this.select4 !== ''&& this.select5 !== ''){
+      alert("Submitted Sucessfully")
+      this.select = ''
+      this.select1 = ''
+      this.select2 = ''
+      this.select3 = ''
+      this.select4 = ''
+      this. select5 = ''
+    }
+  },
+  cancel(){
+    this.select = '';
+    this.select1 = '';
+    this.select2 = '';
+    this.select3 = '';
+    this.select4 = '';
+    this.select5 = '';
+  }
+},
+computed:{
+  check:function(){
+    if(this.select === '' && this.select1 === '' && this.select2 === '' && this.select3 === '' && this.select4 === '' && this.select5 === ''){
+    return true;
+    console.log("I am disabled")
+  } else{
+    return false;
+    console.log("I am enabled")
+  }
+  }
 }
 }
 </script>

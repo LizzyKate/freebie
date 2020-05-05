@@ -33,18 +33,61 @@
           </li>
         </ul>
         <div class="adjust">
-          <span class="art" @click="isModalVisible = !isModalVisible">
+          <span class="art" @click="modal()">
             <i class="fas fa-search"></i>
           </span>
           <span class="art cle">
             <router-link to="/questions" class="fas fa-question root"></router-link>
           </span>
           <span class="art cat">
-            <i class="fas fa-shopping-cart"></i>
+            <i class="fas fa-shopping-cart" @click="isCart()" ></i>
           </span>
         </div>
       </div>
     </nav>
+     <div id="cart" class="cart" v-if="cart" :class="{'show-cart' : cart === true}">
+          <!-- cart item -->
+          <div class="cart-item d-flex justify-content-between text-capitalize my-3">
+            <img src="../../assets/img/blanket_product_03_large@2x.png" class="img-fluid w-25" id="item-img" alt="">
+            <div class="item-text">
+
+              <p id="cart-item-title" class="font-weight-bold mb-0">cart item</p>
+              <span>$</span>
+              <span id="cart-item-price" class="cart-item-price mb-0" >10.99</span>
+            </div>
+            <a href="#" id='cart-item-remove' class="cart-item-remove">
+              <i class="fas fa-trash"></i>
+            </a>
+          </div>
+          <!--end of  cart item -->
+          <!-- cart item -->
+          <div class="cart-item d-flex justify-content-between text-capitalize my-3">
+            <img src="../../assets/img/2016-10-16_2048_large.png" class="img-fluid w-25" id="item-img" alt="">
+            <div class="cart-item-text">
+
+              <p id="cart-item-title" class="font-weight-bold mb-0">cart item</p>
+              <span>$</span>
+              <span id="cart-item-price" class="cart-item-price mb-0" >10.99</span>
+            </div>
+            <a href="#" id='cart-item-remove' class="cart-item-remove">
+              <i class="fas fa-trash"></i>
+            </a>
+          </div>
+          <!--end of  cart item -->
+          <!-- cart total -->
+          <div class="cart-total-container d-flex justify-content-around text-capitalize mt-5">
+            <h5>total</h5>
+            <h5> $ <strong id="cart-total" class="font-weight-bold">10.00</strong> </h5>
+          </div>
+          <!--end cart total -->
+          <!-- cart buttons -->
+          <div class="cart-buttons-container mt-3 d-flex justify-content-between">
+            <a href="#" id="clear-cart" class="btn btn-outline-secondary btn-black text-uppercase">clear cart</a>
+            <a href="#" class="btn btn-outline-secondary text-uppercase btn-pink">checkout</a>
+          </div>
+          <!--end of  cart buttons -->
+          <!--  -->
+        </div>
     <div class="navLine w-100"></div>
     <modal class="pop" v-show="isModalVisible"></modal>
   </div>
@@ -107,18 +150,25 @@ export default {
           page:'/contact',
           list:'Contact Us'
         }
-      ]
+      ],
+      cart:false
     };
   },
   methods: {
     changeMe(word) {
       this.choose = word;
     },
-    showModal(){
-      this.isModalVisible = true;
+    modal(){
+      this.isModalVisible = !this.isModalVisible;
+      if(this.isModalVisible === true){
+        this.cart = false;
+      }
     },
-     closeModal(){
-      this.isModalVisible= false
+    isCart(){
+      this.cart = !this.cart;
+      if(this.cart === true){
+        this.isModalVisible = false;
+      }
     }
   }
 };
