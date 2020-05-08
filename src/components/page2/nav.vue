@@ -151,7 +151,8 @@ export default {
           list:'Contact Us'
         }
       ],
-      cart:false
+      cart:false,
+      modalPage:false
     };
   },
   methods: {
@@ -159,17 +160,41 @@ export default {
       this.choose = word;
     },
     modal(){
+      if(this.modalPage === true){
       this.isModalVisible = !this.isModalVisible;
       if(this.isModalVisible === true){
         this.cart = false;
       }
+      }
     },
     isCart(){
+      if(this.modalPage === true){
       this.cart = !this.cart;
       if(this.cart === true){
         this.isModalVisible = false;
       }
     }
+    }
+  },
+  watch:{
+    '$route' (to, from){
+      console.log(to)
+      this.isModalVisible = false;
+      this.cart = false
+      if(to.name !== 'home'){
+      this.modalPage = false;
+      } else {
+        this.modalPage = true;
+      }
+    }
+  },
+  mounted(){
+    let toe= this.$route
+      if(toe.name !== 'home'){
+      this.modalPage= false
+      } else {
+        this.modalPage = true;
+      }
   }
 };
 </script>

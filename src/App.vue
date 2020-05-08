@@ -2,7 +2,7 @@
 <section >
   <Nav></Nav>
   <!-- firstly components that are common to every pagelike the nav and the footer be here in one file -->
-  <router-view ></router-view>
+  <router-view></router-view>
   <Footer></Footer>
 </section>
 
@@ -23,7 +23,6 @@ export default {
   },
   data () {
     return {
-     
     }
   }
 }

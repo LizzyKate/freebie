@@ -7,18 +7,20 @@ import about from './components/page6/About';
 import contact from './components/page7/contact';
 import questions from './components/additions/questions';
 import checkout from './components/additions/checkout/sum';
-import drop from './components/additions/drop'
+import drop from './components/additions/drop';
 
 export default [
-    { path: '/', component: home },
-    { path: '/shop', name: 'shop', component: shop },
-    { path: '/cart/', component: cart },
-    { path: '/cart/:id', component: cart },
-    { path: '/blog', component: blog },
-    { path: '/info', component: info },
-    { path: '/about', component: about },
-    { path: '/contact', component: contact },
-    { path: '/questions', component: questions },
-    { path: '/checkout', component: checkout },
-    { path: '/drop', component: drop }
+    { path: '/', name:'home', component: home },
+    {path:'/home', name:'newHome',component:home},
+    { path: '/shop', name: 'shop-general', component: shop },
+    { path: '/shop/:shop', name: 'shop', component: shop },
+    { path: '/cart/',name:'cart', component: cart },
+    { path: '/cart/:id', name:'newCart', component: cart },
+    { path: '/blog', name:'blog', component: blog },
+    { path: '/info', name:'info', component: info },
+    { path: '/about', name:'about', component: about },
+    { path: '/contact', name:'contact', component: contact },
+    { path: '/questions', name:'quest', component: questions },
+    { path: '/checkout', name:'check', component: checkout },
+    { path: '/drop', name:'drop', component: drop }
 ]
