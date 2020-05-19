@@ -27,7 +27,7 @@
       <h2 v-if="!currentProduct.price">$140</h2>
       <h2 v-if="currentProduct.price">{{'$' + currentProduct.price}}</h2>
       <div class=" mt-5">
-        <button type="button" class="btn btn-lg butt">ADD TO CART</button>
+        <button type="button" class="btn btn-lg butt" v-on:click="buy">ADD TO CART</button>
     </div>
   </div>
   <div class="bd-highlight london mt-5">Delivery from <strong class="strong">London</strong>, 3-4 week delivery</div>
@@ -144,18 +144,18 @@ export default {
 
   mounted() {
     // const firstIdea = () => {
+    
     let id = this.$route.params.id; 
     this.currentProduct = this.items.find(e => {
       return e.id === +id;
     });
-    // }
-    // const secondIdea = () => {
-    //   let id = this.$route.params.id;
-    //   this.currentProduct = this.itemThree.find(e => {
-    //     return e.id === +id;
-    //   })
-    // }
-    //  
+  },
+
+  methods:{
+    buy(){ 
+      let id = this.$route.params.id;  
+      this.$store.commit("AddtoCart", id)
+    }
   }
   }
 </script>

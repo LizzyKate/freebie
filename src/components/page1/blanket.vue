@@ -49,33 +49,13 @@
 export default {
   data() {
     return {
-      items :[
-        {
-          name:'Hyde Product Name',
-          id:1,
-          price:'140.99',
-          color:'blue and white',
-          order:'Order Now',
-          image:'blanket_product_04_large@2x.png'
-        },
-        {
-           name:'Hyde Product Name',
-           id:2,
-          price:'140.99',
-          color:'blue and white',
-          order:'Order Now',
-          image:'2016-10-16_2048_large.png'
-        },
-        {
-           name:'Hyde Product Name',
-           id:3,
-          price:'140.99',
-          color:'blue and white',
-          order:'Order Now',
-          image:'blanket_product_03_large@2x.png'
-        }
-      ]
+      
     };
+  },
+  computed:{
+    items(){
+      return this.$store.state.itemThree.slice(0, 3);
+    }
   }
 };
 </script>
