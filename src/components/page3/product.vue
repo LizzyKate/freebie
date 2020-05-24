@@ -63,56 +63,7 @@ export default {
 
       note:['A wonderful serenity has taken possession of my entire like these sweet mornings.', 'A wonderful serenity has taken possession of my entire like these sweet mornings.'],
 
-      itemThree :[
-        {
-          name:'Hyde Product Name',
-          id:1,
-          price:'140.99',
-          color:'blue and white',
-          order:'Order Now',
-          image:'blanket_product_04_large@2x.png'
-        },
-        {
-           name:'Hyde Product Name',
-           id:2,
-          price:'140.99',
-          color:'blue and white',
-          order:'Order Now',
-          image:'2016-10-16_2048_large.png'
-        },
-        {
-           name:'Hyde Product Name',
-           id:3,
-          price:'140.99',
-          color:'blue and white',
-          order:'Order Now',
-          image:'blanket_product_03_large@2x.png'
-        },
-           {
-          name:'Hyde Product Name',
-          id:4,
-          price:'140.99',
-          color:'blue and white',
-          order:'Order Now',
-          image:'blanket_product_04_large@2x.png'
-        },
-        {
-           name:'Hyde Product Name',
-           id:5,
-          price:'140.99',
-          color:'blue and white',
-          order:'Order Now',
-          image:'2016-10-16_2048_large.png'
-        },
-        {
-           name:'Hyde Product Name',
-           id:6,
-          price:'140.99',
-          color:'blue and white',
-          order:'Order Now',
-          image:'blanket_product_03_large@2x.png'
-        }
-      ],
+      itemThree : this.$store.state.itemThree,
 
       currentProduct:{}
     }
@@ -134,12 +85,12 @@ export default {
       if(Items) {
         let allPreviousItems = JSON.parse(Items);
         console.log(allPreviousItems, "all previous items");
-        allPreviousItems.push(this.currentProduct[id]);
+        allPreviousItems.push(this.itemThree[id]);
         localStorage.setItem("darts", JSON.stringify(allPreviousItems));
         console.log(allPreviousItems, "I added a new item")
       } else {
         let firstItem = [];
-        firstItem.push(this.items[id]);
+        firstItem.push(this.itemThree[id]);
         localStorage.setItem("darts", JSON.stringify(firstItem));
       }
       // let index = this.$route.params.id;  
