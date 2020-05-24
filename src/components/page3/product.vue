@@ -63,7 +63,7 @@ export default {
 
       note:['A wonderful serenity has taken possession of my entire like these sweet mornings.', 'A wonderful serenity has taken possession of my entire like these sweet mornings.'],
 
-      items :[
+      itemThree :[
         {
           name:'Hyde Product Name',
           id:1,
@@ -88,7 +88,7 @@ export default {
           order:'Order Now',
           image:'blanket_product_03_large@2x.png'
         },
-        {
+           {
           name:'Hyde Product Name',
           id:4,
           price:'140.99',
@@ -111,30 +111,6 @@ export default {
           color:'blue and white',
           order:'Order Now',
           image:'blanket_product_03_large@2x.png'
-        },
-           {
-          name:'Hyde Product Name',
-          id:7,
-          price:'140.99',
-          color:'blue and white',
-          order:'Order Now',
-          image:'blanket_product_04_large@2x.png'
-        },
-        {
-           name:'Hyde Product Name',
-           id:8,
-          price:'140.99',
-          color:'blue and white',
-          order:'Order Now',
-          image:'2016-10-16_2048_large.png'
-        },
-        {
-           name:'Hyde Product Name',
-           id:9,
-          price:'140.99',
-          color:'blue and white',
-          order:'Order Now',
-          image:'blanket_product_03_large@2x.png'
         }
       ],
 
@@ -146,7 +122,7 @@ export default {
     // const firstIdea = () => {
     
     let id = this.$route.params.id; 
-    this.currentProduct = this.items.find(e => {
+    this.currentProduct = this.itemThree.find(e => {
       return e.id === +id;
     });
   },
@@ -154,6 +130,19 @@ export default {
   methods:{
     buy(){ 
       let id = this.$route.params.id;  
+      const Items = localStorage.getItem("darts");
+      if(Items) {
+        let allPreviousItems = JSON.parse(Items);
+        console.log(allPreviousItems, "all previous items");
+        allPreviousItems.push(this.currentProduct[id]);
+        localStorage.setItem("darts", JSON.stringify(allPreviousItems));
+        console.log(allPreviousItems, "I added a new item")
+      } else {
+        let firstItem = [];
+        firstItem.push(this.items[id]);
+        localStorage.setItem("darts", JSON.stringify(firstItem));
+      }
+      // let index = this.$route.params.id;  
       this.$store.commit("AddtoCart", id)
     }
   }

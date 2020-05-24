@@ -24,6 +24,11 @@ export default {
   data () {
     return {
     }
+  },
+  mounted(){
+    let Items = localStorage.getItem("darts");
+    let iteminLocalStorage = JSON.parse(Items);
+    this.$store.commit("updateCartsOnAppMounted", iteminLocalStorage);
   }
 }
 </script>

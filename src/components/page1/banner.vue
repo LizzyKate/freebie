@@ -26,7 +26,7 @@ export default {
   },
   methods:{
     navigate(){
-       this.$router.push({ name: "shop" });
+       this.$router.push({ name: "shop-general" });
     }
   }
 };

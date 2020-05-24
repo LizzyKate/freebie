@@ -24,6 +24,10 @@
     <label for="exampleFormControlInput1" class="billo">City</label>
     <input type="text" class="form-control opt" v-model="select3" required>
   </div>
+   <div class="form-group">
+    <label for="exampleFormControlInput1" class="billo">Amount</label>
+    <input type="number" class="form-control opt" v-model="select6" required>
+  </div>
   <div class="form-row">
     <div class="col">
       <label class="billo" >State</label>
@@ -291,12 +295,13 @@ export default {
        select2:'',
        select3:'',
        select4:'',
-       select5:''
+       select5:'',
+       select6:''
     }
 },
 methods:{
   submit(){
-    if(this.select !== '' && this.select1 !== '' && this.select2 !== '' && this.select3 !== '' && this.select4 !== ''&& this.select5 !== ''){
+    if(this.select !== '' && this.select1 !== '' && this.select2 !== '' && this.select3 !== '' && this.select4 !== ''&& this.select5 !== '' && this.select6 !== ''){
       alert("Submitted Sucessfully")
       this.select = ''
       this.select1 = ''
@@ -304,6 +309,7 @@ methods:{
       this.select3 = ''
       this.select4 = ''
       this. select5 = ''
+      this.select6 = ''
     }
   },
   cancel(){
@@ -313,11 +319,12 @@ methods:{
     this.select3 = '';
     this.select4 = '';
     this.select5 = '';
+    this.select6 = '';
   }
 },
 computed:{
   check:function(){
-    if(this.select === '' && this.select1 === '' && this.select2 === '' && this.select3 === '' && this.select4 === '' && this.select5 === ''){
+    if(this.select === '' && this.select1 === '' && this.select2 === '' && this.select3 === '' && this.select4 === '' && this.select5 === '' & this.select6 === '') {
     return true;
     console.log("I am disabled")
   } else{

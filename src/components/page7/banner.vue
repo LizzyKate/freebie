@@ -9,7 +9,9 @@
     <div class="col rounded hear my-5">
       <div class="d-flex flex-column bd-highlight align-items-center">
   <div class="mt-5 bd-highlight">
-    <i class="fas fa-phone-alt art"></i>
+    <a href="tel:+2348110449018">
+        <i class="fas fa-phone-alt art"></i>
+    </a>
   </div>
   <div class="mt-3 bd-highlight ipsum team">
     <h5 class="text-center">Talk to Us</h5>
@@ -25,7 +27,9 @@
     <div class="col rounded hear my-5 ml-5">
       <div class="d-flex flex-column bd-highlight align-items-center">
   <div class="mt-5 bd-highlight">
-    <i class="fas fa-comment-alt art"></i>
+    <a href="mailto:onyenekwelizabeth@gmail.com">
+       <i class="fas fa-comment-alt art"></i>
+    </a>
   </div>
   <div class="mt-3 bd-highlight ipsum team">
     <h5 class="text-center">Contact Customer Support</h5>
@@ -34,7 +38,9 @@
     <p class="text-center">Sometimes you need a little help or support.<br> Don't worry... we are here for you.</p>
   </div>
   <div class="mt-3 bd-highlight">
-      <button type="button" class="btn btn-lg butt">CONTACT SUPPORT</button>
+    <a href="mailto:onyenekwelizabeth@gmail.com">
+       <button type="button" class="btn btn-lg butt">CONTACT SUPPORT</button>
+    </a>
   </div>
 </div>
     </div>

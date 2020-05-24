@@ -23,7 +23,6 @@
             <router-link
               :to="`${link.page}`"
               class="nav-link"
-              href="#"
               active-class="create"
               exact
             >{{link.list}}</router-link>
@@ -175,9 +174,18 @@ export default {
       }
     },
     lete(index) {
+      const items = localStorage.getItem("darts");
+      if(items){
+        let cartsinStorage = JSON.parse(items);
+        cartsinStorage.splice(index, 1);
+        localStorage.setItem("darts", JSON.stringify(cartsinStorage))
+      } else {
+        return;
+      }
       this.$store.commit("remove", index);
     },
     tal(i) {
+      localStorage.removeItem("darts")
       this.$store.commit("total", i);
     }
   },
