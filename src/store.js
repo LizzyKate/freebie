@@ -55,30 +55,6 @@ export const store = new Vuex.Store({
               order: "Order Now",
               image: "blanket_product_03_large@2x.png"
             }
-            // {
-            //   name: "Hyde Product Name",
-            //   id: 7,
-            //   price: "140.99",
-            //   color: "blue and white",
-            //   order: "Order Now",
-            //   image: "blanket_product_04_large@2x.png"
-            // },
-            // {
-            //   name: "Hyde Product Name",
-            //   id: 8,
-            //   price: "140.99",
-            //   color: "blue and white",
-            //   order: "Order Now",
-            //   image: "2016-10-16_2048_large.png"
-            // },
-            // {
-            //   name: "Hyde Product Name",
-            //   id: 9,
-            //   price: "140.99",
-            //   color: "blue and white",
-            //   order: "Order Now",
-            //   image: "blanket_product_03_large@2x.png"
-            // }
           ],
 
           carts:[
