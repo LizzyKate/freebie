@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import request from "axios";
 
 Vue.use(Vuex);
 
@@ -57,9 +58,7 @@ export const store = new Vuex.Store({
             }
           ],
 
-          carts:[
-           
-          ]
+          carts:[]
     },
 
     mutations:{
@@ -81,5 +80,13 @@ export const store = new Vuex.Store({
               state.carts = []
             }
           }
+    },
+
+    actions:{
+      async getProductFromServer({ state }, payload) {
+        const produce = await request.get("/api/products");
+        console.log(produce);
+        state.produce = produce.data.data;
+      }
     }
 })

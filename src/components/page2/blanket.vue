@@ -44,7 +44,7 @@
       </div>
     </div>
     <div class="text-center mt-5">
-      <button type="button" class="btn btn-lg butt">LOAD MORE</button>
+      <button type="button" class="btn btn-lg butt" v-on:click="load()">LOAD MORE</button>
     </div>
   </div>
 </template>
@@ -60,6 +60,12 @@ export default {
   computed:{
     itemThree(){
       return this.$store.state.itemThree;
+    }
+  },
+
+  methods:{
+    load(){
+      this.$store.dispatch("getProductFromServer")
     }
   }
 };
