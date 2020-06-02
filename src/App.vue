@@ -29,7 +29,9 @@ export default {
     let Items = localStorage.getItem("darts");
     let iteminLocalStorage = JSON.parse(Items);
     this.$store.commit("updateCartsOnAppMounted", iteminLocalStorage);
+    this.$store.dispatch("getProductFromServer")
   }
+  
 }
 </script>
 

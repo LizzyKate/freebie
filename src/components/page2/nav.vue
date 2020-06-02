@@ -48,16 +48,11 @@
         v-for="(product, i) in shop"
         :key="i"
       >
-        <img
-          v-bind:src="require('../../assets/img/' + product.image)"
-          class="img-fluid w-25"
-          id="item-img"
-          alt
-        />
+        <img v-bind:src="product.images[0].img" class="img-fluid w-25" id="item-img" alt />
         <div class="item-text">
           <p id="cart-item-title" class="font-weight-bold mb-3">{{product.name}}</p>
           <span>$</span>
-          <span id="cart-item-price" class="cart-item-price mb-0">{{product.price}}</span>
+          <span id="cart-item-price" class="cart-item-price mb-0">{{product.cost}}</span>
         </div>
         <span id="cart-item-remove" class="cart-item-remove">
           <i class="fas fa-trash" v-on:click="lete()"></i>
@@ -137,14 +132,8 @@ export default {
           list: "Update"
         },
         {
-          code: "product",
-          id: 5,
-          page: "/cart",
-          list: "Your Product"
-        },
-        {
           code: "contact",
-          id: 6,
+          id: 5,
           page: "/contact",
           list: "Contact Us"
         }
@@ -175,17 +164,17 @@ export default {
     },
     lete(index) {
       const items = localStorage.getItem("darts");
-      if(items){
+      if (items) {
         let cartsinStorage = JSON.parse(items);
         cartsinStorage.splice(index, 1);
-        localStorage.setItem("darts", JSON.stringify(cartsinStorage))
+        localStorage.setItem("darts", JSON.stringify(cartsinStorage));
       } else {
         return;
       }
       this.$store.commit("remove", index);
     },
     tal(i) {
-      localStorage.removeItem("darts")
+      localStorage.removeItem("darts");
       this.$store.commit("total", i);
     }
   },
@@ -215,7 +204,7 @@ export default {
     },
     total() {
       if (this.shop.length > 0) {
-        let price = this.shop.map(e => e.price);
+        let price = this.shop.map(e => e.cost);
         return price.reduce((a, b) => +a + +b);
       } else {
         return 0;

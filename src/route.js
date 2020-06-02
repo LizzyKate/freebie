@@ -14,7 +14,6 @@ export default [
     {path:'/home', name:'newHome',component:home},
     { path: '/shop', name: 'shop-general', component: shop },
     { path: '/shop/:shop', name: 'shop', component: shop },
-    { path: '/cart/',name:'cart', component: cart },
     { path: '/cart/:id', name:'newCart', component: cart },
     { path: '/blog', name:'blog', component: blog },
     { path: '/info', name:'info', component: info },

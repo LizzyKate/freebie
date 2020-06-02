@@ -1,62 +1,13 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import request from "axios";
+import axios from "./axios";
 
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
     strict:true,
     state:{
-          itemThree: [
-            {
-              name:'Hyde Product Name',
-              id:1,
-              price:'140.99',
-              color:'blue and white',
-              order:'Order Now',
-              image:'blanket_product_04_large@2x.png'
-            },
-            {
-               name:'Hyde Product Name',
-               id:2,
-              price:'140.99',
-              color:'blue and white',
-              order:'Order Now',
-              image:'2016-10-16_2048_large.png'
-            },
-            {
-               name:'Hyde Product Name',
-               id:3,
-              price:'140.99',
-              color:'blue and white',
-              order:'Order Now',
-              image:'blanket_product_03_large@2x.png'
-            },
-            {
-              name: "Hyde Product Name",
-              id: 4,
-              price: "140.99",
-              color: "blue and white",
-              order: "Order Now",
-              image: "blanket_product_04_large@2x.png"
-            },
-            {
-              name: "Hyde Product Name",
-              id: 5,
-              price: "140.99",
-              color: "blue and white",
-              order: "Order Now",
-              image: "2016-10-16_2048_large.png"
-            },
-            {
-              name: "Hyde Product Name",
-              id: 6,
-              price: "140.99",
-              color: "blue and white",
-              order: "Order Now",
-              image: "blanket_product_03_large@2x.png"
-            }
-          ],
+          itemThree: [],
 
           carts:[]
     },
@@ -79,14 +30,25 @@ export const store = new Vuex.Store({
             } else {
               state.carts = []
             }
+          },
+          fromServer(state, payload){
+            state.itemThree = payload
           }
     },
 
     actions:{
-      async getProductFromServer({ state }, payload) {
-        const produce = await request.get("/api/products");
-        console.log(produce);
-        state.produce = produce.data.data;
+      // async getProductFromServer({ state }, payload) {
+      //   const produce = await request.get("/api/products");
+      //   console.log(produce);
+      //   state.produce = produce.data.data;
+      // }
+      getProductFromServer:({ state, commit }, payload) =>{
+          axios.get('api/products').then((product) => {
+            console.log(product)
+            commit("fromServer", product.data.data)
+          }, error => {
+            console.log(error)
+          })
       }
     }
 })

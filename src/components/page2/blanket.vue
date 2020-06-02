@@ -6,10 +6,10 @@
           <div class="bd-highlight">
             <div class="rounded blank">
               <div class="strip m-auto">
-                <img v-bind:src=" require('../../assets/img/'+product.image) " />
+                <img :src="product.images[0].img" />
               </div>
               <router-link :to="`cart/${product.id}`">
-                <button class="rounded text-center price mt-5 ml-3">{{'$'+ product.price}}</button>
+                <button class="rounded text-center price mt-5 ml-3">{{'$'+ product.cost}}</button>
               </router-link>
             </div>
           </div>
@@ -30,13 +30,13 @@
               </div>
             </div>
           </div>
-          <div class="bd-highlight blue">{{product.color.toUpperCase()}}</div>
+          <div class="bd-highlight blue">BLUE AND WHITE</div>
           <div class="bd-highlight mt-3">
             <div class="d-flex flex-row bd-highlight align-items-center">
               <router-link
-                :to="`cart/${product.id}`"
+                :to="`cart/${product._id}`"
                 class="bd-highlight order"
-              >{{product.order.toUpperCase()}}</router-link>
+              >ORDER NOW</router-link>
               <div class="ml-1 bd-highlight now"></div>
             </div>
           </div>
@@ -44,7 +44,7 @@
       </div>
     </div>
     <div class="text-center mt-5">
-      <button type="button" class="btn btn-lg butt" v-on:click="load()">LOAD MORE</button>
+      <button type="button" class="btn btn-lg butt">LOAD MORE</button>
     </div>
   </div>
 </template>
@@ -63,10 +63,14 @@ export default {
     }
   },
 
-  methods:{
-    load(){
-      this.$store.dispatch("getProductFromServer")
-    }
+  // methods:{
+  //   load(){
+  //     console.log("I am clciking")
+  //     this.$store.dispatch("getProductFromServer")
+  //   }
+  // }
+  mounted(){
+     this.$store.dispatch("getProductFromServer")
   }
 };
 </script>
