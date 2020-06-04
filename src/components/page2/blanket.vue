@@ -8,7 +8,7 @@
               <div class="strip m-auto">
                 <img :src="product.images[0].img" />
               </div>
-              <router-link :to="`cart/${product.id}`">
+              <router-link :to="`cart/${product._id}`">
                 <button class="rounded text-center price mt-5 ml-3">{{'$'+ product.cost}}</button>
               </router-link>
             </div>

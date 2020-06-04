@@ -22,11 +22,8 @@
       <div class="col">
         <div class="d-flex flex-column bd-highlight">
           <div class="bd-highlight max">
-            <!-- <h2 v-if="!currentProduct.name">Max Product Name</h2> -->
             <h2 v-if="currentProduct.name">{{currentProduct.name}}</h2>
-            <!-- <p v-if="!currentProduct.color">BLUE & WHITE</p> -->
             <p>{{currentProduct.shortDescription}}</p>
-            <!-- <h2 v-if="!currentProduct.price">$140</h2> -->
             <h2>{{'$' + currentProduct.cost}}</h2>
             <div class="mt-5">
               <button type="button" class="btn btn-lg butt" v-on:click="buy()">ADD TO CART</button>
@@ -65,9 +62,14 @@ export default {
         "A wonderful serenity has taken possession of my entire like these sweet mornings.",
         "A wonderful serenity has taken possession of my entire like these sweet mornings."
       ],
-      itemThree:this.$store.state.itemThree,
+
       currentProduct: {}
     };
+  },
+  computed: {
+    itemThree() {
+      return this.$store.state.itemThree;
+    }
   },
 
   mounted() {
@@ -82,9 +84,9 @@ export default {
 
   methods: {
     buy() {
-      let product = this.itemThree.find((e) =>{
-          return e.id === id;
-        })
+      let product = this.itemThree.find(e => {
+        return e.id === id;
+      });
       let id = this.$route.params.id;
       const Items = localStorage.getItem("darts");
       if (Items) {
