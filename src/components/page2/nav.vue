@@ -25,7 +25,8 @@
               class="nav-link"
               active-class="create"
               exact
-            >{{link.list}}</router-link>
+              >{{ link.list }}</router-link
+            >
           </li>
         </ul>
         <div class="adjust">
@@ -33,7 +34,10 @@
             <i class="fas fa-search"></i>
           </span>
           <span class="art cle">
-            <router-link to="/questions" class="fas fa-question root"></router-link>
+            <router-link
+              to="/questions"
+              class="fas fa-question root"
+            ></router-link>
           </span>
           <span class="art cat">
             <i class="fas fa-shopping-cart" @click="isCart()"></i>
@@ -41,18 +45,33 @@
         </div>
       </div>
     </nav>
-    <div id="cart" class="cart" v-if="cart" :class="{'show-cart' : cart === true}">
+    <div
+      id="cart"
+      class="cart"
+      v-if="cart"
+      :class="{ 'show-cart': cart === true }"
+    >
       <!-- cart item -->
       <div
         class="cart-item d-flex justify-content-between text-capitalize my-3"
         v-for="(product, i) in shop"
         :key="i"
       >
-        <img v-bind:src="product.images[0].img" class="img-fluid w-25" id="item-img" alt />
+        <img
+          v-if="product"
+          v-bind:src="product.images[0].img"
+          class="img-fluid w-25"
+          id="item-img"
+          alt
+        />
         <div class="item-text">
-          <p id="cart-item-title" class="font-weight-bold mb-3">{{product.name}}</p>
+          <p id="cart-item-title" class="font-weight-bold mb-3">
+            {{ product.name }}
+          </p>
           <span>$</span>
-          <span id="cart-item-price" class="cart-item-price mb-0">{{product.cost}}</span>
+          <span id="cart-item-price" class="cart-item-price mb-0">{{
+            product.cost
+          }}</span>
         </div>
         <span id="cart-item-remove" class="cart-item-remove">
           <i class="fas fa-trash" v-on:click="lete()"></i>
@@ -62,11 +81,13 @@
       <!-- cart item -->
       <!--end of  cart item -->
       <!-- cart total -->
-      <div class="cart-total-container d-flex justify-content-around text-capitalize mt-5">
+      <div
+        class="cart-total-container d-flex justify-content-around text-capitalize mt-5"
+      >
         <h5>total</h5>
         <h5>
           $
-          <strong id="cart-total" class="font-weight-bold">{{total}}</strong>
+          <strong id="cart-total" class="font-weight-bold">{{ total }}</strong>
         </h5>
       </div>
       <!--end cart total -->
@@ -76,8 +97,12 @@
           id="clear-cart"
           class="btn btn-outline-secondary btn-black text-uppercase"
           v-on:click="tal()"
-        >clear cart</button>
-        <button class="btn btn-outline-secondary text-uppercase btn-pink">checkout</button>
+        >
+          clear cart
+        </button>
+        <button class="btn btn-outline-secondary text-uppercase btn-pink">
+          checkout
+        </button>
       </div>
       <!--end of  cart buttons -->
       <!--  -->
@@ -94,7 +119,7 @@ import questions from "../additions/questions";
 export default {
   components: {
     modal: modal,
-    questions: questions
+    questions: questions,
   },
   data() {
     return {
@@ -105,41 +130,41 @@ export default {
           code: "Ho",
           id: 0,
           page: "/",
-          list: "Home"
+          list: "Home",
         },
         {
           code: "Sh",
           id: 1,
           page: "/shop",
-          list: "Shop"
+          list: "Shop",
         },
         {
           code: "Ab",
           id: 2,
           page: "/about",
-          list: "About"
+          list: "About",
         },
         {
           code: "Bl",
           id: 3,
           page: "/blog",
-          list: "Blog"
+          list: "Blog",
         },
         {
           code: "update",
           id: 4,
           page: "/info",
-          list: "Update"
+          list: "Update",
         },
         {
           code: "contact",
           id: 5,
           page: "/contact",
-          list: "Contact Us"
-        }
+          list: "Contact Us",
+        },
       ],
       cart: false,
-      modalPage: false
+      modalPage: false,
     };
   },
   methods: {
@@ -176,7 +201,7 @@ export default {
     tal(i) {
       localStorage.removeItem("darts");
       this.$store.commit("total", i);
-    }
+    },
   },
   watch: {
     $route(to, from) {
@@ -188,7 +213,7 @@ export default {
       } else {
         this.modalPage = true;
       }
-    }
+    },
   },
   mounted() {
     let toe = this.$route;
@@ -200,19 +225,19 @@ export default {
   },
   computed: {
     shop() {
+      console.log(this.$store.state.carts, "carts in shop");
       return this.$store.state.carts;
     },
     total() {
       if (this.shop.length > 0) {
-        let price = this.shop.map(e => e.cost);
+        let price = this.shop.map((e) => e.cost);
         return price.reduce((a, b) => +a + +b);
       } else {
         return 0;
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
-<style>
-</style>
+<style></style>
