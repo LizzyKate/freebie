@@ -68,9 +68,10 @@
           <p id="cart-item-title" class="font-weight-bold mb-3">
             {{ product.name }}
           </p>
+           <b id="cart-item-title" class="font-weight-bold mb-3">{{product.qty}}</b><br>
           <span>$</span>
           <span id="cart-item-price" class="cart-item-price mb-0">{{
-            product.cost
+            product.cost * product.qty
           }}</span>
         </div>
         <span id="cart-item-remove" class="cart-item-remove">
@@ -100,7 +101,7 @@
         >
           clear cart
         </button>
-        <button class="btn btn-outline-secondary text-uppercase btn-pink">
+        <button class="btn btn-outline-secondary text-uppercase btn-pink" @click="check()">
           checkout
         </button>
       </div>
@@ -164,7 +165,8 @@ export default {
         },
       ],
       cart: false,
-      modalPage: false,
+      // modalPage: false,
+      modalPage:true
     };
   },
   methods: {
@@ -202,27 +204,33 @@ export default {
       localStorage.removeItem("darts");
       this.$store.commit("total", i);
     },
-  },
-  watch: {
-    $route(to, from) {
-      console.log(to);
-      this.isModalVisible = false;
+    
+
+    check(){
+      this.$router.push('/checkout')
       this.cart = false;
-      if (to.name !== "home") {
-        this.modalPage = false;
-      } else {
-        this.modalPage = true;
-      }
-    },
-  },
-  mounted() {
-    let toe = this.$route;
-    if (toe.name !== "home") {
-      this.modalPage = false;
-    } else {
-      this.modalPage = true;
     }
   },
+  // watch: {
+  //   $route(to, from) {
+  //     console.log(to);
+  //     this.isModalVisible = false;
+  //     this.cart = false;
+  //     if (to.name !== "home") {
+  //       this.modalPage = false;
+  //     } else {
+  //       this.modalPage = true;
+  //     }
+  //   },
+  // },
+  // mounted() {
+  //   let toe = this.$route;
+  //   if (toe.name !== "home") {
+  //     this.modalPage = false;
+  //   } else {
+  //     this.modalPage = true;
+  //   }
+  // },
   computed: {
     shop() {
       console.log(this.$store.state.carts, "carts in shop");
@@ -230,8 +238,8 @@ export default {
     },
     total() {
       if (this.shop.length > 0) {
-        let price = this.shop.map((e) => e.cost);
-        return price.reduce((a, b) => +a + +b);
+        let price = this.shop.map((e) => +e.cost * +e.qty);
+        return price.reduce((a, b) => +a + +b).toFixed(2);
       } else {
         return 0;
       }

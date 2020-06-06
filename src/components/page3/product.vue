@@ -30,9 +30,17 @@
             <h2 v-if="currentProduct.name">{{ currentProduct.name }}</h2>
             <p>{{ currentProduct.shortDescription }}</p>
             <h2>{{ "$" + currentProduct.cost }}</h2>
-            <div class="mt-5">
+            <div class="mt-5" v-if="itemNotInCart">
               <button type="button" class="btn btn-lg butt" v-on:click="buy()">
                 ADD TO CART
+              </button>
+               <button type="button" class="btn btn-lg butt" @click="changeCounter('add')" > + </button>
+               <b class="butt">{{counter}}</b>
+               <button type="button" class="btn btn-lg butt" @click="changeCounter()"> - </button>
+            </div>
+            <div class="mt-5" v-else>
+              <button type="button" class="btn btn-lg butt" disabled>
+                ADDED TO CART
               </button>
             </div>
           </div>
@@ -79,12 +87,20 @@ export default {
       ],
 
       currentProduct: {},
+      counter:1
     };
   },
   computed: {
     itemThree() {
       return this.$store.state.itemThree;
     },
+
+    itemNotInCart(){
+      let id = this.$route.params.id;
+       let product = this.$store.state.carts.find((e) => e._id === id);
+      if(product) return false;
+      else return true;
+    }
   },
 
   mounted() {
@@ -101,6 +117,7 @@ export default {
     buy() {
       let id = this.$route.params.id;
       let product = this.itemThree.find((e) => e._id === id);
+      product.qty = this.counter;
       const Items = localStorage.getItem("darts");
       if (Items) {
         let allPreviousItems = JSON.parse(Items);
@@ -116,7 +133,19 @@ export default {
       console.log(product);
       this.$store.commit("AddtoCart", product);
     },
-  },
+
+    changeCounter(type){
+      if (type === 'add'){
+        this.counter++
+      } else {
+        if (this.counter <= 1){
+          return
+        } else {
+          this.counter--
+        }
+      }
+    },
+  }
 };
 </script>
 
