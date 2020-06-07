@@ -608,11 +608,6 @@
     border-color: #000!important;
   }
   /* end of cart buttons */
-  .turn:check{
-      border: 1px solid #999999;
-      background: #cccccc;
-      color: #666666;
-  }
 @media screen and (max-width: 1000px){
     .create{
         width: 5% !important;
