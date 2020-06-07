@@ -1,6 +1,6 @@
 <template>
 <div class="container mt-5">
-   <form @submit.prevent="submit()">
+   <form @submit.prevent="submit()" class="col-md-6 mx-auto">
   <div class="form-group">
     <label class="billor">File Name</label>
     <input type="text" class="form-control opt" placeholder="Product Name" v-model="select" required>
@@ -32,6 +32,7 @@
 
 <script>
 
+import { authenticate } from "../../routeGuard"
 
 export default {
  
@@ -63,7 +64,15 @@ computed:{
     console.log("I am enabled")
   }
   }
-}
+},
+beforeRouteEnter(to, from, next) {
+    if (authenticate()) {
+        next(true)
+      // do something //
+    } else {
+      next("/login")
+    }
+  }
 }
 </script>
 

@@ -9,6 +9,8 @@ import questions from "./components/additions/questions";
 import checkout from "./components/additions/checkout/sum";
 import drop from "./components/additions/drop";
 import signup from "./components/additions/signup";
+import login from './components/additions/log';
+import PageNotFound from './components/additions/PageNotFound';
 
 export default [
     { path: "/", name: "home", component: home },
@@ -23,5 +25,7 @@ export default [
     { path: "/questions", name: "quest", component: questions },
     { path: "/checkout", name: "check", component: checkout },
     { path: "/drop", name: "drop", component: drop },
-    { path: "/signup", name: "signup", component: signup },
+    { path: "/newStuff", name: "signup", component: signup },
+    { path:"/login", name:"log", component:login },
+    { path: "*", component: PageNotFound }
 ];
