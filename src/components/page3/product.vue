@@ -5,6 +5,8 @@
         <div class="d-flex flex-column bd-highlight">
           <div class="bd-highlight imahe">
             <img
+              id="__image"
+              ref="image"
               v-if="currentProduct.images"
               v-bind:src="currentProduct.images[0].img"
             />
@@ -17,6 +19,7 @@
                 class="bd-highlight tiger"
                 v-for="(product, i) in currentProduct.images"
                 :key="i"
+                @click="changeImage(currentProduct.images[i].img)"
               >
                 <img v-bind:src="currentProduct.images[i].img" />
               </div>
@@ -42,6 +45,9 @@
               <button type="button" class="btn btn-lg butt" disabled>
                 ADDED TO CART
               </button>
+            </div>
+            <div v-if="authenticate">
+              <button class="btn btn-danger mt-5 " @click="remove()"> Delete </button>
             </div>
           </div>
           <div class="bd-highlight london mt-5">
@@ -77,6 +83,7 @@
 
 <script>
 import axios from "../../axios";
+import {authenticate} from "../../routeGuard"
 
 export default {
   data() {
@@ -93,6 +100,9 @@ export default {
   computed: {
     itemThree() {
       return this.$store.state.itemThree;
+    },
+    authenticate(){
+      return authenticate()      
     },
 
     itemNotInCart(){
@@ -114,9 +124,14 @@ export default {
   },
 
   methods: {
+    changeImage (image) {
+      console.log(this.$refs)
+      this.$refs.image.src = image
+    },
     buy() {
       let id = this.$route.params.id;
-      let product = this.itemThree.find((e) => e._id === id);
+      let product = this.currentProduct
+      console.log(product)
       product.qty = this.counter;
       const Items = localStorage.getItem("darts");
       if (Items) {
@@ -145,6 +160,16 @@ export default {
         }
       }
     },
+
+    remove(){
+      let id = this.$route.params.id;
+      axios.delete("api/products/" + id).then((product) => {
+        console.log("deleted")
+        this.$router.push("/shop")
+      }, (err) => {
+        alert("not deleted")
+      })
+    }
   }
 };
 </script>

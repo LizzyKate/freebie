@@ -126,15 +126,19 @@
     font-weight: lighter;
 }
 .blank{
-    width: 270px;
+    min-width: 270px;
+    padding: 20px;
     height: 280px;
     border: 1px solid #BFBFBF;
+    object-fit: contain;
 }
 .strip{
-    width: 240px;
+    max-width: 240px;
 }
 .strip img{
     width: 100%;
+    object-fit: contain;
+    height: 140px;
 }
 .price{
     width: 100px !important;
@@ -425,13 +429,15 @@
     width: 80%;
 }
 .tiger{
-    width:80px;
-    height: 60px;
+    max-width:80px;
+    height: 80px;
+    padding: 20px;
+    object-fit: contain;
     border:1px solid #95989A;
     border-radius: 5px;
 }
 .tiger2{
-    width: 80% !important;
+    max-width: 80% !important;
 }
 .tiger img{
     width: 100%;
@@ -586,6 +592,8 @@
     width: 23rem;
     padding: 2rem 1.5rem;
     transform: rotateY(-360deg);
+    height: 500px;
+    overflow: scroll;
   }
   .cart-item {
     transition: all 2s ease-in-out;
@@ -606,6 +614,9 @@
   /* cart buttons */
   .btn-black, .btn-pink {
     border-color: #000!important;
+  }
+  .push{
+      flex-grow: 1;
   }
   /* end of cart buttons */
 @media screen and (max-width: 1000px){

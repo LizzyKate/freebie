@@ -64,7 +64,7 @@
           id="item-img"
           alt
         />
-        <div class="item-text">
+        <div class="item-text push mx-5">
           <p id="cart-item-title" class="font-weight-bold mb-3">
             {{ product.name }}
           </p>

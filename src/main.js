@@ -9,6 +9,8 @@ import Routes from './route';
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap-vue'
 import { store } from "./store"
+import aos from "aos"
+import "aos/dist/aos.css"
 
 Vue.use(VueRouter);
 Vue.use(BootstrapVue);
@@ -20,6 +22,9 @@ const router = new VueRouter({
 });
 
 new Vue({
+  created(){
+    aos.init()
+  },
   el: '#app',
   store:store,
   render: h => h(App),

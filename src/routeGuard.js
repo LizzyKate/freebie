@@ -1,15 +1,21 @@
+import jwt from "jsonwebtoken";
+
+const Expired = (token) => {
+    const payload = jwt.decode(token)
+    console.log(payload, "payload")
+    if (+payload.exp > new Date() / 1000){
+        return true
+    }else{
+        localStorage.removeItem("auth-token")
+        return false
+    }
+}
+
 export const authenticate = () => {
     const authToken = localStorage.getItem("auth-token" );
-    if(authToken){
+    if(authToken && Expired(authToken)){
         return true
     } else {
         return false
     }
 }
-
-// beforeRouteEnter(to, from, next) {
-//     if (to.query.redirectFrom) {
-//         next(false)
-//       // do something //
-//     } next
-//   }

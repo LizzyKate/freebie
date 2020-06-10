@@ -8,7 +8,10 @@
     <remove></remove>
     <best></best>
     <strike></strike>
-    <pauli></pauli>
+
+    <div data-aos="fade-up" data-aos-anchor-placement="top-center">
+      <pauli></pauli>
+    </div>
   </div>
 </template>
 
@@ -30,7 +33,7 @@ export default {
     relax: relax,
     product: product,
     blanket: blanket,
-    remove:remove,
+    remove: remove,
     best: best,
     strike: border,
     pauli: pauli

@@ -10,6 +10,9 @@ export const store = new Vuex.Store({
     itemThree: [],
 
     carts: [],
+
+    allow:false
+
   },
 
   mutations: {
@@ -33,6 +36,12 @@ export const store = new Vuex.Store({
     fromServer(state, payload) {
       state.itemThree = payload;
     },
+    loading(state, payload){
+      state.itemThree.push(...payload)
+    },
+    allow(state){
+      state.allow = true
+    }
   },
 
   actions: {
@@ -47,5 +56,21 @@ export const store = new Vuex.Store({
         }
       );
     },
+
+    loadMore: ({ state, commit }, payload) => {
+      axios.get("api/products?page=" + payload). then(
+        (load) => {
+          console.log(load);
+          if (load.data.data.length > 0){
+            commit("loading", load.data.data)
+          }else{
+            commit("allow")
+          }
+        }, 
+        (error) => {
+          console.log(error, "i am not loading")
+        }
+      )
+    }
   },
 });
